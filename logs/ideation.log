@@ -1,0 +1,88 @@
+2025-06-06 09:01:04,555 - app.agents.blue_hat - INFO - 初始化蓝帽 Agent
+2025-06-06 09:01:12,449 - app.agents.blue_hat - INFO - 初始化蓝帽 Agent
+2025-06-06 09:01:12,470 - app.main - INFO - 应用启动
+2025-06-06 09:02:11,119 - app.main - INFO - 应用关闭
+2025-06-06 09:02:12,137 - app.agents.blue_hat - INFO - 初始化蓝帽 Agent
+2025-06-06 09:02:12,158 - app.main - INFO - 应用启动
+2025-06-06 09:02:30,379 - app.services.ideation_api - INFO - 收到创意生成请求: topic=气候变化, context={'data_type': '时间序列', 'target_audience': '普通公众', 'visualization_goal': '展示全球变暖趋势'}
+2025-06-06 09:02:30,380 - app.agents.blue_hat - INFO - 开始运行 ideation 流程: topic=气候变化
+2025-06-06 09:02:30,380 - app.agents.blue_hat - INFO - 开始生成阶段
+2025-06-06 09:02:30,380 - app.agents.blue_hat - INFO - 生成阶段完成: {}
+2025-06-06 09:02:30,380 - app.agents.blue_hat - INFO - 开始探索阶段
+2025-06-06 09:02:30,380 - app.agents.blue_hat - INFO - 探索阶段完成: {}
+2025-06-06 09:02:30,381 - app.agents.blue_hat - INFO - 开始再生成阶段
+2025-06-06 09:02:30,381 - app.agents.blue_hat - INFO - 再生成阶段完成: {}
+2025-06-06 09:02:30,381 - app.agents.blue_hat - ERROR - ideation 流程执行失败: 1 validation error for AgentOutput
+result
+  Input should be a valid string [type=string_type, input_value={}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/string_type
+Traceback (most recent call last):
+  File "/Users/anker/Tongji(local)/idvx/Ideation_code/app/agents/blue_hat.py", line 51, in run
+    return AgentOutput(
+  File "/Users/anker/opt/anaconda3/envs/metaphor-vis-env/lib/python3.9/site-packages/pydantic/main.py", line 214, in __init__
+    validated_self = self.__pydantic_validator__.validate_python(data, self_instance=self)
+pydantic_core._pydantic_core.ValidationError: 1 validation error for AgentOutput
+result
+  Input should be a valid string [type=string_type, input_value={}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/string_type
+2025-06-06 09:02:30,387 - app.services.ideation_api - ERROR - 创意生成失败: 1 validation error for AgentOutput
+result
+  Input should be a valid string [type=string_type, input_value={}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/string_type
+Traceback (most recent call last):
+  File "/Users/anker/Tongji(local)/idvx/Ideation_code/app/services/ideation_api.py", line 27, in generate_ideation
+    result = await ideation_chain.run(
+  File "/Users/anker/Tongji(local)/idvx/Ideation_code/app/chains/ideation_chain.py", line 25, in run
+    result = await self.blue_hat.run(input_data)
+  File "/Users/anker/Tongji(local)/idvx/Ideation_code/app/agents/blue_hat.py", line 51, in run
+    return AgentOutput(
+  File "/Users/anker/opt/anaconda3/envs/metaphor-vis-env/lib/python3.9/site-packages/pydantic/main.py", line 214, in __init__
+    validated_self = self.__pydantic_validator__.validate_python(data, self_instance=self)
+pydantic_core._pydantic_core.ValidationError: 1 validation error for AgentOutput
+result
+  Input should be a valid string [type=string_type, input_value={}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/string_type
+2025-06-06 09:03:16,670 - app.main - INFO - 应用关闭
+2025-06-06 09:03:17,967 - app.agents.blue_hat - INFO - 初始化蓝帽 Agent
+2025-06-06 09:03:17,985 - app.main - INFO - 应用启动
+2025-06-06 09:03:41,885 - app.main - INFO - 应用关闭
+2025-06-06 09:03:43,245 - app.agents.blue_hat - INFO - 初始化蓝帽 Agent
+2025-06-06 09:03:43,257 - app.main - INFO - 应用启动
+2025-06-06 09:03:49,141 - app.services.ideation_api - INFO - 收到创意生成请求: topic=气候变化, context={'data_type': '时间序列', 'target_audience': '普通公众', 'visualization_goal': '展示全球变暖趋势'}
+2025-06-06 09:03:49,141 - app.agents.blue_hat - INFO - 开始运行 ideation 流程: topic=气候变化
+2025-06-06 09:03:49,141 - app.agents.blue_hat - INFO - 开始生成阶段
+2025-06-06 09:03:49,142 - app.agents.blue_hat - INFO - 生成阶段完成: {'status': '生成阶段完成'}
+2025-06-06 09:03:49,142 - app.agents.blue_hat - INFO - 开始探索阶段
+2025-06-06 09:03:49,142 - app.agents.blue_hat - INFO - 探索阶段完成: {'status': '探索阶段完成'}
+2025-06-06 09:03:49,143 - app.agents.blue_hat - INFO - 开始再生成阶段
+2025-06-06 09:03:49,143 - app.agents.blue_hat - INFO - 再生成阶段完成: {'status': '再生成阶段完成'}
+2025-06-06 09:03:49,143 - app.services.ideation_api - INFO - 创意生成成功: {'result': "{'status': '再生成阶段完成'}", 'metadata': {'phase_results': {'generation': {'status': '生成阶段完成'}, 'exploration': {'status': '探索阶段完成'}}}}
+2025-06-06 09:09:46,219 - app.main - INFO - 应用关闭
+2025-06-06 09:09:47,853 - app.agents.blue_hat - INFO - 初始化蓝帽 Agent
+2025-06-06 09:09:47,876 - app.main - INFO - 应用启动
+2025-06-06 09:13:10,490 - app.main - INFO - 应用关闭
+2025-06-06 09:13:11,699 - app.agents.blue_hat - INFO - 初始化蓝帽 Agent
+2025-06-06 09:13:11,740 - app.main - INFO - 应用启动
+2025-06-06 09:13:18,299 - app.main - INFO - 应用关闭
+2025-06-06 09:13:20,078 - app.agents.blue_hat - INFO - 初始化蓝帽 Agent
+2025-06-06 09:13:20,100 - app.main - INFO - 应用启动
+2025-06-06 09:15:55,969 - app.main - INFO - 应用关闭
+2025-06-06 09:15:57,538 - app.agents.blue_hat - INFO - 初始化蓝帽 Agent
+2025-06-06 09:15:57,563 - app.main - INFO - 应用启动
+2025-06-06 09:16:04,617 - app.main - INFO - 应用关闭
+2025-06-06 09:16:05,389 - app.agents.blue_hat - INFO - 初始化蓝帽 Agent
+2025-06-06 09:16:05,408 - app.main - INFO - 应用启动
+2025-06-06 09:16:48,178 - app.main - INFO - 应用关闭
+2025-06-06 09:16:49,027 - app.agents.blue_hat - INFO - 初始化蓝帽 Agent
+2025-06-06 09:16:49,055 - app.main - INFO - 应用启动
+2025-06-06 09:17:18,313 - app.services.ideation_api - INFO - 收到创意生成请求: topic=气候变化, context={'data_type': '时间序列'}
+2025-06-06 09:17:18,314 - app.chains.ideation_chain - INFO - 开始新的创意生成流程: topic=气候变化
+2025-06-06 09:17:18,314 - app.agents.blue_hat - INFO - 开始运行 ideation 流程: topic=气候变化
+2025-06-06 09:17:18,314 - app.agents.blue_hat - INFO - 开始生成阶段
+2025-06-06 09:17:18,315 - app.agents.blue_hat - INFO - 生成阶段完成: {'status': '生成阶段完成'}
+2025-06-06 09:17:18,315 - app.agents.blue_hat - INFO - 开始探索阶段
+2025-06-06 09:17:18,315 - app.agents.blue_hat - INFO - 探索阶段完成: {'status': '探索阶段完成'}
+2025-06-06 09:17:18,315 - app.agents.blue_hat - INFO - 开始再生成阶段
+2025-06-06 09:17:18,325 - app.agents.blue_hat - INFO - 再生成阶段完成: {'status': '再生成阶段完成'}
+2025-06-06 09:17:18,325 - app.services.ideation_api - INFO - 创意生成成功: {'result': "{'status': '再生成阶段完成'}", 'metadata': {'phase_results': {'generation': {'status': '生成阶段完成'}, 'exploration': {'status': '探索阶段完成'}}}, 'session_id': 'session_1431654863499115966', 'generation_count': 1}
+2025-06-06 09:56:06,001 - app.main - INFO - 应用关闭
