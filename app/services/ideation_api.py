@@ -28,6 +28,7 @@ async def generate_ideation(request: IdeationRequest) -> Dict[str, Any]:
             topic=request.topic,
             context=request.context
         )
+        
         logger.info(f"创意生成成功: {result}")
         return IdeationResponse(
             success=True,
